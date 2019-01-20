@@ -1,0 +1,25 @@
+[package]
+name = "xdistances"
+description = "Python wrapper on strsim a Rust implementations of string similarity metrics"
+documentation = "https://xdistances.readthedocs.io/en/latest/"
+repository = "https://github.com/OvalMoney/xdistances"
+readme = "README.md"
+version = "1.0.0"
+authors = ["Simone Basso <sb@ovalmoney.com>"]
+edition = "2018"
+license = "MIT"
+license-file = "LICENSE"
+keywords = ["python", "strsim"]
+publish = false
+
+[badges]
+travis-ci = { repository = "OvalMoney/xdistances" }
+
+[dependencies]
+strsim = "0.8.0"
+pyo3 = { version = "0.6.0-alpha.1", features = ["extension-module"] }
+
+[lib]
+name = "xdistances"
+crate-type = ["cdylib"]
+

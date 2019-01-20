@@ -1,0 +1,21 @@
+language: python
+sudo: false
+
+python:
+  - 3.5
+  - 3.6
+  - 3.7
+
+install:
+  - curl https://sh.rustup.rs -sSf > rustup-init.sh
+  - sh rustup-init.sh --default-toolchain nightly -y -v
+  - export PATH="$HOME/.cargo/bin:$PATH"
+  - rustc --version
+  - rustup override set nightly
+  - pip install -r requirements.txt
+  - pyo3-pack develop --strip --release
+
+script:
+  - export PATH="$HOME/.cargo/bin:$PATH"
+  - pytest
+

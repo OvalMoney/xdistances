@@ -1,0 +1,5 @@
+Reference
+=========
+
+.. automodule:: xdistances
+   :members:
